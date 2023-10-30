@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Basket
   - Ball
+  - Drawable
   layers:
   - Default
   - TransparentFX
