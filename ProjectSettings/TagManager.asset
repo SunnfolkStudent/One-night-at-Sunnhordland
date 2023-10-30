@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Basket
   - Ball
+  - Ground
   layers:
   - Default
   - TransparentFX
