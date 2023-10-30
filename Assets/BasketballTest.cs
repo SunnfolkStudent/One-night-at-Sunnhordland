@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Velocity : MonoBehaviour
+public class BasketballTest : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     [SerializeField] private Vector2 ballVelocity;
@@ -14,5 +14,13 @@ public class Velocity : MonoBehaviour
     private void SettVelocity()
     {
         _rigidbody2D.velocity = ballVelocity;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Basket"))
+        {
+            Debug.Log("hit!");
+        }
     }
 }
