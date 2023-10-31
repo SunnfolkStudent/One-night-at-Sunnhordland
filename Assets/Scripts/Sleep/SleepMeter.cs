@@ -8,8 +8,6 @@ public class NewBehaviourScript : MonoBehaviour
 {
 
     public int sleeplevel = 100;
-    public bool NegativeChange;
-    public bool PositiveChange;
 
     public float timeCounter;
 
@@ -40,16 +38,16 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (sleeplevel < 100)
         {
-            sleeplevel += 1;
+            sleeplevel += 15;
             //sleepSoundEffect.Play();}
         }
     }
 
     public void SleepDown()
     {
-        if (NegativeChange && sleeplevel > 0)
+        if (sleeplevel > 0)
         {
-            sleeplevel -= 1;
+            sleeplevel -= 15;
             //sleepSoundEffect.Play();}
 
         }

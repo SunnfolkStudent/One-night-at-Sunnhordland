@@ -1,18 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+
 
 public class Coffeescript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /*private SleepMeter _sleepMeter;
+    private int Coffee = 
     void Start()
     {
-        _sleepMeter.sleepUp()
+        _sleepMeter = GetComponent<SleepMeter>();
+        
     }
 
-    // Update is called once per frame
+    private void OnMouseDown()
+    {
+        if (Coffee > 0)
+        {
+            _sleepMeter.sleepUp();
+            Coffee--;
+        }
+
+    }
+}
+
     void Update()
     {
         
     }
+    */
 }
