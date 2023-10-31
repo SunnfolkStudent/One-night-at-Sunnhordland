@@ -7,8 +7,9 @@ using UnityEngine;
 
 public class Coffeescript : MonoBehaviour
 {
-    /*private SleepMeter _sleepMeter;
-    private int Coffee = 
+    public float coffeeTimeCounter;
+    private SleepMeter _sleepMeter;
+    private bool _coffee;
     void Start()
     {
         _sleepMeter = GetComponent<SleepMeter>();
@@ -17,18 +18,22 @@ public class Coffeescript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (Coffee > 0)
+        if (_coffee)
         {
-            _sleepMeter.sleepUp();
-            Coffee--;
+            _sleepMeter.SleepUp();
+            _coffee = false;
         }
 
     }
-}
 
-    void Update()
+
+    public void Update()
     {
-        
+        if (Time.time > coffeeTimeCounter)
+        {
+            _coffee = true;
+            coffeeTimeCounter = Time.time + 15f;
+        }
     }
-    */
+    
 }

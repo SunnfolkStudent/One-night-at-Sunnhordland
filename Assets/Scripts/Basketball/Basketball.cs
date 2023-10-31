@@ -4,10 +4,12 @@ namespace Basketball
 {
     public class Basketball : MonoBehaviour
     {
+        private SleepMeter _sleepMeter;
         private Rigidbody2D _rigidbody2D;
         private GameObject _pointer;
         private Vector3 _startPosition;
         private bool _fired;
+        private bool _scored;
         [SerializeField] private Vector2 ballVelocity;
         [SerializeField] private float throwingPower = 2;
         [SerializeField] private float drawMax = 12.5f;
@@ -18,6 +20,7 @@ namespace Basketball
 
         private void Start()
         {
+            _sleepMeter = GetComponent<SleepMeter>();
             _pointer = FindAnyObjectByType<FollowPointer>().gameObject;
             _lineRenderer = FindAnyObjectByType<LineRenderer>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -103,7 +106,10 @@ namespace Basketball
             if (other.gameObject.CompareTag("Basket"))
             {
                 Debug.Log("hit!");
-                
+                _scored = true;
+                _sleepMeter.SleepUp();
+                //Sound?
+
             }
             else if (other.gameObject.CompareTag("Ground"))
             {
