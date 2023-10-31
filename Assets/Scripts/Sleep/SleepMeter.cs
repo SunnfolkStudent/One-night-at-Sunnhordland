@@ -4,12 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class NewBehaviourScript : MonoBehaviour
+public class SleepMeter : MonoBehaviour
 {
-    
+
     public int sleeplevel = 100;
-    public bool NegativeChange;
-    public bool PositiveChange;
 
     public float timeCounter;
 
@@ -22,10 +20,10 @@ public class NewBehaviourScript : MonoBehaviour
             sleeplevel -= 1;
             timeCounter = Time.time + 5f;
         }
-        
+
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (sleeplevel <= i*20)
+            if (sleeplevel <= i * 20)
             {
                 hearts[i].SetActive(false);
             }
@@ -36,18 +34,22 @@ public class NewBehaviourScript : MonoBehaviour
         }
     }
 
-    public void SleepChange()
+    public void SleepUp()
     {
-        if (NegativeChange && sleeplevel > 0)
+        if (sleeplevel < 100)
         {
-            sleeplevel -= 1;
+            sleeplevel += 15;
+            //sleepSoundEffect.Play();}
+        }
+    }
+
+    public void SleepDown()
+    {
+        if (sleeplevel > 0)
+        {
+            sleeplevel -= 15;
             //sleepSoundEffect.Play();}
 
-            if (PositiveChange && sleeplevel < 100)
-            {
-                sleeplevel += 1;
-                //sleepSoundEffect.Play();}
-            }
         }
     }
 }
