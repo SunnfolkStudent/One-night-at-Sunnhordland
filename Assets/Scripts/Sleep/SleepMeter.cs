@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class NewBehaviourScript : MonoBehaviour
+public class SleepMeter : MonoBehaviour
 {
 
     public int sleeplevel = 100;
