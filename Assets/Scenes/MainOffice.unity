@@ -326,11 +326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 041463cf4049bf24cae5297c656bf611, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.4
+      value: -4.28125
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 041463cf4049bf24cae5297c656bf611, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.29
+      value: -4.3125
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 041463cf4049bf24cae5297c656bf611, type: 3}
       propertyPath: m_LocalPosition.z
@@ -814,9 +814,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 0, z: -10}
-  m_XDamping: 7.6
-  m_YDamping: 7.6
-  m_ZDamping: 7.8
+  m_XDamping: 4.8
+  m_YDamping: 20
+  m_ZDamping: 20
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
