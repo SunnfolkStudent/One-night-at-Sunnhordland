@@ -8,4 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainOffice.unity
+    guid: 908651ae07cce0e4f83be76c57e483a8
+  - enabled: 1
+    path: Assets/Scenes/BasketballMiniGame.unity
+    guid: 6e6d74c10ede8974bb9c3dbe1f5340c2
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
