@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    
+
     public int sleeplevel = 100;
     public bool NegativeChange;
     public bool PositiveChange;
@@ -22,10 +22,10 @@ public class NewBehaviourScript : MonoBehaviour
             sleeplevel -= 1;
             timeCounter = Time.time + 5f;
         }
-        
+
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (sleeplevel <= i*20)
+            if (sleeplevel <= i * 20)
             {
                 hearts[i].SetActive(false);
             }
@@ -36,18 +36,22 @@ public class NewBehaviourScript : MonoBehaviour
         }
     }
 
-    public void SleepChange()
+    public void SleepUp()
+    {
+        if (sleeplevel < 100)
+        {
+            sleeplevel += 1;
+            //sleepSoundEffect.Play();}
+        }
+    }
+
+    public void SleepDown()
     {
         if (NegativeChange && sleeplevel > 0)
         {
             sleeplevel -= 1;
             //sleepSoundEffect.Play();}
 
-            if (PositiveChange && sleeplevel < 100)
-            {
-                sleeplevel += 1;
-                //sleepSoundEffect.Play();}
-            }
         }
     }
 }
