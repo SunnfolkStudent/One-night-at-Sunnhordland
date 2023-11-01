@@ -6,9 +6,22 @@ using UnityEngine;
 public class LineGenerator : MonoBehaviour
 {
     public GameObject linePrefab;
+    
     private Line _activeLine;
-    private bool _isMouseOverDrawable = false;    
+    private bool _isMouseOverDrawable = false;
 
+    private DialogueTrigger _disable;
+
+    private void Start()
+    {
+        _disable = FindObjectOfType<DialogueTrigger>();
+
+        if (_disable == null)
+        {
+            _disable.DisableElement();
+        }
+    }
+    
     private void Update()
     {
         //if (_isMouseOverDrawable)
