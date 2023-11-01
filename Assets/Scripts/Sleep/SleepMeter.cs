@@ -61,7 +61,7 @@ namespace Sleep
 
         public void IncreaseTimer(float amount)
         {
-            float maxEnergyForStage = 1 - (_state + 1) * 0.125f;
+            var maxEnergyForStage = 1 - (_state + 1) * 0.125f;
             Debug.Log(maxEnergyForStage);
             Mathf.Clamp(sleepLevel, 0, maxEnergyForStage);
             sleepLevel += amount;

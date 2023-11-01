@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sleepLevel: 1
-  sleepinessRate: 8
+  energySeconds: 30
   hours: {fileID: 0}
   sleepBarSegments:
   - {fileID: 0}
