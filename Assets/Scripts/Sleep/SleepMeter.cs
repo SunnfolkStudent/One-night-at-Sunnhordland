@@ -1,55 +1,64 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UIElements;
 
-
-public class SleepMeter : MonoBehaviour
+namespace Sleep
 {
-
-    public int sleeplevel = 100;
-
-    public float timeCounter;
-
-    public GameObject[] hearts;
-
-    public void Update()
+    public class SleepMeter : MonoBehaviour
     {
-        if (Time.time > timeCounter)
+        private float _sleepLevel;
+        [SerializeField] private float sleepinessRate = 1;
+        private RectTransform _rectTransform;
+        
+        [Header("SleepMeterSegments")]
+        [SerializeField] private GameObject hours;
+        [SerializeField] private GameObject[] sleepBarSegments;
+
+        private void Start()
         {
-            sleeplevel -= 1;
-            timeCounter = Time.time + 5f;
+            _sleepLevel = 1;
+            _rectTransform = GetComponent<RectTransform>();
+            hours = GameObject.Find("Hours").gameObject;
+            
+            var i = 0;
+            foreach (Transform child in hours.transform)
+            {
+                sleepBarSegments[i] = child.gameObject;
+                i++;
+            }
         }
 
-        for (int i = 0; i < hearts.Length; i++)
+        public void Update()
         {
-            if (sleeplevel <= i * 20)
+            if (_rectTransform.localScale.x >= 0)
             {
-                hearts[i].SetActive(false);
+                _sleepLevel -= sleepinessRate * Time.deltaTime;
             }
             else
             {
-                hearts[i].SetActive(true);
+                _sleepLevel = 1;
             }
+            SetSleepbarLength(_sleepLevel);
+            RemoveSegments();
+
+
         }
-    }
 
-    public void SleepUp()
-    {
-        if (sleeplevel < 100)
+        private void SetSleepbarLength(float length)
         {
-            sleeplevel += 15;
-            //sleepSoundEffect.Play();}
+            _rectTransform.localScale = new Vector3(length, 1, 1);
+            _rectTransform.anchoredPosition = new Vector3( 756.5f * length, -90, 0);
         }
-    }
 
-    public void SleepDown()
-    {
-        if (sleeplevel > 0)
+        private void RemoveSegments()
         {
-            sleeplevel -= 15;
-            //sleepSoundEffect.Play();}
-
+            for (var i = 0; i < sleepBarSegments.Length; i++)
+            {
+                if (_sleepLevel < 1 - (i + 1) * 0.125f)
+                {
+                    Destroy(sleepBarSegments[7 - i].gameObject);
+                }
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+using Sleep;
 using UnityEngine;
 
 namespace Basketball
@@ -106,9 +107,6 @@ namespace Basketball
             if (other.gameObject.CompareTag("Basket"))
             {
                 Debug.Log("hit!");
-                //_scored = true;
-                _sleepMeter.SleepUp();
-                //Sound?
 
             }
             else if (other.gameObject.CompareTag("Ground"))
