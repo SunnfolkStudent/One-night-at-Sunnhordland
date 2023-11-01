@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4865347500857930775}
   - component: {fileID: 1855729752478985771}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Dart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

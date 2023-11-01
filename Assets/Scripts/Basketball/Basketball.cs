@@ -1,5 +1,5 @@
-using Sleep;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Basketball
 {
@@ -105,6 +105,7 @@ namespace Basketball
             {
                 Debug.Log("hit!");
                 GainTime(timeGainedFromPints);
+                SceneManager.LoadScene("MainOffice");
             }
             else if (other.gameObject.CompareTag("Ground"))
             {

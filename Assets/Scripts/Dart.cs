@@ -15,9 +15,4 @@ public class Dart : MonoBehaviour
     {
         Instantiate(dart, pointer.transform.position, new Quaternion(0, 0, 0, 0));
     }
-
-    private void OnMouseUp()
-    {
-        
-    }
 }
