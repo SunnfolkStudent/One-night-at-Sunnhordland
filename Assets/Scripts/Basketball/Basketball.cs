@@ -117,7 +117,7 @@ namespace Basketball
         private void GainTime(float time)
         {
             time *= _sleepMeter.energySeconds;
-            _sleepMeter.sleepLevel += time;
+            _sleepMeter.IncreaseTimer(time);
         }
     }
 }

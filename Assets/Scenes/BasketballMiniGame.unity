@@ -134,7 +134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2304456711857936741, guid: 04f7d97f00832554f90ac30c523eba1e, type: 3}
       propertyPath: energySeconds
-      value: 8
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3854730114558532213, guid: 04f7d97f00832554f90ac30c523eba1e, type: 3}
       propertyPath: m_Pivot.x
@@ -1410,7 +1410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1370369158561939299, guid: faac3ba659ff23242bfe92408a6b33de, type: 3}
       propertyPath: timeGainedFromPints
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1731133266676660669, guid: faac3ba659ff23242bfe92408a6b33de, type: 3}
       propertyPath: m_Name

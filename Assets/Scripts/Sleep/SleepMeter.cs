@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Sleep
 {
@@ -7,6 +6,7 @@ namespace Sleep
     {
         public float sleepLevel = 1;
         public float energySeconds;
+        private int _state = 0;
         private RectTransform _rectTransform;
         private Vector3 _standardPositionBar;
         
@@ -53,13 +53,19 @@ namespace Sleep
 
         private void RemoveSegments()
         {
-            for (var i = 0; i < sleepBarSegments.Length; i++)
-            {
-                if (sleepLevel < 1 - (i + 1) * 0.125f)
-                {
-                    Destroy(sleepBarSegments[7 - i].gameObject);
-                }
-            }
+            if (!(sleepLevel < 1 - (_state + 1) * 0.125f)) return;
+            _state++;
+            Debug.Log(_state);
+            Destroy(sleepBarSegments[8 - _state].gameObject);
+        }
+
+        public void IncreaseTimer(float amount)
+        {
+            float maxEnergyForStage = 1 - (_state + 1) * 0.125f;
+            Debug.Log(maxEnergyForStage);
+            Mathf.Clamp(sleepLevel, 0, maxEnergyForStage);
+            sleepLevel += amount;
+            Debug.Log(sleepLevel);
         }
     }
 }
