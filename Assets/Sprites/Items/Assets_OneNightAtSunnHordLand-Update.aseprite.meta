@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f935400daf0c0ac458a14b8847de56a7
+guid: 94edba335d52a034f9582b24251848f9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 32
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638343655011833123
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Assets_OneNightAtSunnHordLand
+  - name: Assets_OneNightAtSunnHordLand-Update
     originalName: 
-    pivot: {x: 1.5636363, y: -2.25}
+    pivot: {x: 0.52033895, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 55
-      height: 52
-    spriteID: 70cd11b6a23d13d4ba9d55c16542c9de
+      width: 590
+      height: 171
+    spriteID: edf7ac6e52d9b65418767481aaea2729
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,45 +142,23 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 325438277
-    name: Assets_OneNightAtSunnHordLand
+    guid: -114541883
+    name: Assets_OneNightAtSunnHordLand-Update
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Assets_OneNightAtSunnHordLand
+    - name: Assets_OneNightAtSunnHordLand-Update
       frameIndex: 0
       cellRect:
-        x: 4
-        y: 117
-        width: 55
-        height: 52
-      spriteId: 70cd11b6a23d13d4ba9d55c16542c9de
+        x: 2
+        y: 0
+        width: 590
+        height: 171
+      spriteId: edf7ac6e52d9b65418767481aaea2729
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 180, y: 180}
+  canvasSize: {x: 618, y: 180}
