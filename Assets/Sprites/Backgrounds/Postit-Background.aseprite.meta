@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: de73fba56b1be1a4981ef6596431474a
-=======
-guid: 02671225476df5243b50182552c8714d
->>>>>>> Stashed changes
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -99,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638344718016047472
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -134,11 +130,7 @@ ScriptedImporter:
       y: 4
       width: 320
       height: 180
-<<<<<<< Updated upstream
-    spriteID: 29b0bdd7cce51de4598fc44a025c845e
-=======
-    spriteID: 764091e0e33693546bcae7a6e3755e05
->>>>>>> Stashed changes
+    spriteID: 6a3d40c5239dd6c49be0c27de577ec89
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -163,14 +155,32 @@ ScriptedImporter:
         y: 0
         width: 320
         height: 180
-<<<<<<< Updated upstream
-      spriteId: 29b0bdd7cce51de4598fc44a025c845e
-=======
-      spriteId: 764091e0e33693546bcae7a6e3755e05
->>>>>>> Stashed changes
+      spriteId: 6a3d40c5239dd6c49be0c27de577ec89
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 320, y: 180}
