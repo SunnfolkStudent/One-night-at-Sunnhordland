@@ -5,28 +5,28 @@ namespace Basketball
 {
     public class Basketball : MonoBehaviour
     {
+        private GameObject _pointer;
         private SleepMeter _sleepMeter;
         private Rigidbody2D _rigidbody2D;
-        private GameObject _pointer;
-        private Vector3 _startPosition;
-        private bool _fired;
-        //private bool _scored;
-        [SerializeField] private Vector2 ballVelocity;
+        private LineRenderer _lineRenderer;
+        
+        [SerializeField] private float timeGainedFromPints;
         [SerializeField] private float throwingPower = 2;
         [SerializeField] private float drawMax = 12.5f;
+        [SerializeField] private Vector2 ballVelocity;
         
-        
-        private LineRenderer _lineRenderer;
+        private Vector3 _startPosition;
         private bool _isDragging;
+        private bool _fired;
 
         private void Start()
         {
-            _sleepMeter = GetComponent<SleepMeter>();
+            _sleepMeter = GameObject.Find("SleepBar").gameObject.GetComponent<SleepMeter>();
             _pointer = FindAnyObjectByType<FollowPointer>().gameObject;
             _lineRenderer = FindAnyObjectByType<LineRenderer>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
-            _rigidbody2D.gravityScale = 0;
             _startPosition = transform.position;
+            _rigidbody2D.gravityScale = 0;
             _fired = false;
         }
 
@@ -100,14 +100,11 @@ namespace Basketball
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.CompareTag("Wall"))
-            {
-                return;
-            }
+            if (other.gameObject.CompareTag("Wall")) return;
             if (other.gameObject.CompareTag("Basket"))
             {
                 Debug.Log("hit!");
-
+                GainTime(timeGainedFromPints);
             }
             else if (other.gameObject.CompareTag("Ground"))
             {
@@ -115,6 +112,12 @@ namespace Basketball
             }
             Instantiate(gameObject, _startPosition, new Quaternion(0,0,0,0));
             Destroy(gameObject);
+        }
+
+        private void GainTime(float time)
+        {
+            time *= _sleepMeter.energySeconds;
+            _sleepMeter.sleepLevel += time;
         }
     }
 }

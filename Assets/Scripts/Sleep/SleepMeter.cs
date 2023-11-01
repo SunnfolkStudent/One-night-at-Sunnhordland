@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEngine.UIElements;
 
 namespace Sleep
 {
     public class SleepMeter : MonoBehaviour
     {
-        private float _sleepLevel;
-        [SerializeField] private float sleepinessRate = 1;
+        public float sleepLevel = 1;
+        public float energySeconds;
         private RectTransform _rectTransform;
+        private Vector3 _standardPositionBar;
         
         [Header("SleepMeterSegments")]
         [SerializeField] private GameObject hours;
@@ -16,8 +16,10 @@ namespace Sleep
 
         private void Start()
         {
-            _sleepLevel = 1;
+            sleepLevel = 1;
+            energySeconds = 1 / energySeconds;
             _rectTransform = GetComponent<RectTransform>();
+            _standardPositionBar = _rectTransform.anchoredPosition;
             hours = GameObject.Find("Hours").gameObject;
             
             var i = 0;
@@ -32,29 +34,28 @@ namespace Sleep
         {
             if (_rectTransform.localScale.x >= 0)
             {
-                _sleepLevel -= sleepinessRate * Time.deltaTime;
+                sleepLevel -= energySeconds * Time.deltaTime;
             }
             else
             {
-                _sleepLevel = 1;
+                // Loose
             }
-            SetSleepbarLength(_sleepLevel);
+            
+            SetSleepBarLength();
             RemoveSegments();
-
-
         }
 
-        private void SetSleepbarLength(float length)
+        private void SetSleepBarLength()
         {
-            _rectTransform.localScale = new Vector3(length, 1, 1);
-            _rectTransform.anchoredPosition = new Vector3( 756.5f * length, -90, 0);
+            _rectTransform.localScale = new Vector3(sleepLevel, 1, 1);
+            _rectTransform.anchoredPosition = new Vector3( _standardPositionBar.x * sleepLevel, _standardPositionBar.y, 0);
         }
 
         private void RemoveSegments()
         {
             for (var i = 0; i < sleepBarSegments.Length; i++)
             {
-                if (_sleepLevel < 1 - (i + 1) * 0.125f)
+                if (sleepLevel < 1 - (i + 1) * 0.125f)
                 {
                     Destroy(sleepBarSegments[7 - i].gameObject);
                 }

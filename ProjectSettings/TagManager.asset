@@ -8,6 +8,8 @@ TagManager:
   - Ball
   - Drawable
   - Segments
+  - Wall
+  - Ground
   layers:
   - Default
   - TransparentFX
