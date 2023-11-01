@@ -7,7 +7,7 @@ public class LineGenerator : MonoBehaviour
 {
     public GameObject linePrefab;
     
-    private Line _activeLine;
+    public Line activeLine;
     private bool _isMouseOverDrawable = false;
 
     private DialogueTrigger _disable;
@@ -24,24 +24,25 @@ public class LineGenerator : MonoBehaviour
     
     private void Update()
     {
+        Debug.Log(_isMouseOverDrawable);
         //if (_isMouseOverDrawable)
         //{
             
         if (Input.GetMouseButtonDown(0))
         {
             GameObject newLine = Instantiate(linePrefab);
-            _activeLine = newLine.GetComponent<Line>();
+            activeLine = newLine.GetComponent<Line>();
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            _activeLine = null;
+            activeLine = null;
         }
 
-        if (_activeLine != null)
+        if (activeLine != null)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            _activeLine.UpdateLine(mousePos);
+            activeLine.UpdateLine(mousePos);
         }
         //}
     }
@@ -53,6 +54,7 @@ public class LineGenerator : MonoBehaviour
 
     private void OnMouseOver()
     {
+        Debug.Log("Mouse is over");
         if (gameObject.CompareTag("Drawable")) _isMouseOverDrawable = true;
     }
     
