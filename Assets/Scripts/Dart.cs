@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dart : MonoBehaviour
 {
@@ -9,10 +9,17 @@ public class Dart : MonoBehaviour
     private void Start()
     {
         pointer = GameObject.Find("Pointer").gameObject;
+        
+        Invoke(nameof(ReturnToMainOffice), 5);
     }
 
     private void OnMouseDown()
     {
         Instantiate(dart, pointer.transform.position, new Quaternion(0, 0, 0, 0));
+    }
+
+    private void ReturnToMainOffice()
+    {
+        SceneManager.LoadScene("MainOffice");
     }
 }
