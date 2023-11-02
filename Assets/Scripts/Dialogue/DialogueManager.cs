@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     
     private Queue<string> _sentences;
+
+    public GameObject dialoguwBox;
     
     void Start()
     {
@@ -35,8 +37,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (_sentences.Count == 0)
         {
+            dialoguwBox.SetActive(false);
             if(SceneManager.GetActiveScene().name != "MainOffice") EndDialogue();
-            
             return;
         }
 
