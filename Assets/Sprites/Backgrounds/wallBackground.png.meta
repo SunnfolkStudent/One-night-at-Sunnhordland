@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bcfb2d3602d733042a6084ce4ccf7ee1
+guid: c262094423eea104b8a6e2ce40afe1b3
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wallBackground_0: -4339360821964285687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
