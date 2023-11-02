@@ -35,7 +35,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (_sentences.Count == 0)
         {
-            EndDialogue();
+            if(SceneManager.GetActiveScene().name != "MainOffice") EndDialogue();
+            
             return;
         }
 
