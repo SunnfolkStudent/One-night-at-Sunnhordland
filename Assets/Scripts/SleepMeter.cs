@@ -1,15 +1,24 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class SleepMeter : MonoBehaviour
 {
     public float sleepLevel = 1;
+    private float _timeTime = 1;
     public float energySeconds;
+    private float _timeSeconds;
+    [SerializeField] private float missingPercentTime = 0.1f;
     private int _state;
     private RectTransform _rectTransform;
     private Vector3 _standardPositionBar;
+
     public AudioSource _Source;
     public AudioClip Scream;
+
+
+    private GameObject _canvas;
+
         
     [Header("SleepMeterSegments")]
     [SerializeField] private GameObject hours;
@@ -17,11 +26,12 @@ public class SleepMeter : MonoBehaviour
 
     private void Start()
     {
-        var canvas = GameObject.Find("Canvas");
-        DontDestroyOnLoad(canvas);
+        _canvas = GameObject.Find("Canvas");
+        DontDestroyOnLoad(_canvas);
         
         _state = 0;
         sleepLevel = 1;
+        _timeSeconds = (1 - missingPercentTime) / energySeconds;
         energySeconds = 1 / energySeconds;
         _rectTransform = GetComponent<RectTransform>();
         _standardPositionBar = _rectTransform.anchoredPosition;
@@ -40,11 +50,24 @@ public class SleepMeter : MonoBehaviour
         if (_rectTransform.localScale.x >= 0)
         {
             sleepLevel -= energySeconds * Time.deltaTime;
+            _timeTime -= _timeSeconds * Time.deltaTime;
+            Debug.Log("timeTime: " + _timeTime);
         }
         else
         {
+
             SceneManager.LoadScene("Loose");
             _Source.PlayOneShot(Scream);
+
+            SceneManager.LoadScene("Lose");
+            Destroy(_canvas);
+        }
+
+        if (_timeTime == 0)
+        {
+            SceneManager.LoadScene("Win");
+            Destroy(_canvas);
+
         }
             
         SetSleepBarLength();
@@ -59,7 +82,7 @@ public class SleepMeter : MonoBehaviour
 
     private void RemoveSegments()
     {
-        if (!(sleepLevel < 1 - (_state + 1)  * 0.125f)) return;
+        if (!(_timeTime < 1 - (_state + 1)  * 0.125f)) return;
         _state++;
         Destroy(sleepBarSegments[8 - _state].gameObject);
     }
@@ -68,5 +91,11 @@ public class SleepMeter : MonoBehaviour
     {
         //var maxEnergyForStage = 1 - (_state + 1) * 0.125f;
         sleepLevel += amount * energySeconds;
+    }
+    
+    public void DecreaseTimer(float amount)
+    {
+        //var maxEnergyForStage = 1 - (_state + 1) * 0.125f;
+        sleepLevel -= amount * energySeconds;
     }
 }

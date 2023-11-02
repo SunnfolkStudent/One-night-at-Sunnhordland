@@ -18,7 +18,7 @@ public class Dart : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Instantiate(dart, pointer.transform.position, new Quaternion(0, 0, 0, 0));
+        Instantiate(dart, pointer.transform.position, Quaternion.identity);
         _sleepMeter.IncreaseTimer(1);
     }
 
