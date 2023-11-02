@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pngimg.com - darts_PNG22_0: -2301490983427702679
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

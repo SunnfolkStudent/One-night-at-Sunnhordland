@@ -9,21 +9,11 @@ public class LineGenerator : MonoBehaviour
     
     private Line _activeLine;
     private bool _isMouseOverDrawable = false;
-
-    private DialogueTrigger _disable;
-
-    private void Start()
-    {
-        _disable = FindObjectOfType<DialogueTrigger>();
-
-        if (_disable == null)
-        {
-            _disable.DisableElement();
-        }
-    }
+    
     
     private void Update()
     {
+        Debug.Log(_isMouseOverDrawable);
         //if (_isMouseOverDrawable)
         //{
             
@@ -53,6 +43,7 @@ public class LineGenerator : MonoBehaviour
 
     private void OnMouseOver()
     {
+        Debug.Log("Mouse is over");
         if (gameObject.CompareTag("Drawable")) _isMouseOverDrawable = true;
     }
     

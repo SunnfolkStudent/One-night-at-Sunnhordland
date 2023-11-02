@@ -6,18 +6,18 @@ using System.Linq;
 public class Line : MonoBehaviour
 {
     public LineRenderer lineRenderer;
-    public List<Vector2> points;
+    private List<Vector2> _points;
 
     public void UpdateLine(Vector2 position)
     {
-        if (points == null)
+        if (_points == null)
         {
-            points = new List<Vector2>();
+            _points = new List<Vector2>();
             SetPoint(position);
             return;
         }
 
-        if (Vector2.Distance(points.Last(), position) > 0.1f)
+        if (Vector2.Distance(_points.Last(), position) > 0.1f)
         {
             SetPoint(position);
         }
@@ -25,9 +25,9 @@ public class Line : MonoBehaviour
     
     public void SetPoint(Vector2 point)
     {
-        points.Add(point);
-        lineRenderer.positionCount = points.Count;
-        lineRenderer.SetPosition(points.Count - 1, point);
+        _points.Add(point);
+        lineRenderer.positionCount = _points.Count;
+        lineRenderer.SetPosition(_points.Count - 1, point);
         
     }
 }

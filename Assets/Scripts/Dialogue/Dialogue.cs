@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class Dialogue : MonoBehaviour
+public class Dialogue //: MonoBehaviour
 {
     public string name;
     
