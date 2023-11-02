@@ -6,6 +6,7 @@ namespace ClickableObjects
     {
         private SleepMeter _sleepMeter;
         [SerializeField] private float coffeeTimeRegeneration;
+        private bool _coffeeAvailable;
 
         private void Start()
         {
@@ -14,7 +15,10 @@ namespace ClickableObjects
 
         private void OnMouseDown()
         {
+            if (_coffeeAvailable == false) return;
+            
             _sleepMeter.IncreaseTimer(5);
+            _coffeeAvailable = false;
         }
     }
 }
