@@ -13,12 +13,9 @@ public class SleepMeter : MonoBehaviour
     private RectTransform _rectTransform;
     private Vector3 _standardPositionBar;
 
-    public AudioSource _Source;
-    public AudioClip Scream;
-
-
     private GameObject _canvas;
 
+    private GameObject _ambiance;
         
     [Header("SleepMeterSegments")]
     [SerializeField] private GameObject hours;
@@ -26,8 +23,10 @@ public class SleepMeter : MonoBehaviour
 
     private void Start()
     {
+        _ambiance = GameObject.Find("Ambiance");
         _canvas = GameObject.Find("Canvas");
         DontDestroyOnLoad(_canvas);
+        DontDestroyOnLoad(_ambiance);
         
         _state = 0;
         sleepLevel = 1;
@@ -56,13 +55,14 @@ public class SleepMeter : MonoBehaviour
         else
         {
             SceneManager.LoadScene("Lose");
-            _Source.PlayOneShot(Scream);
+            Destroy(_ambiance);
             Destroy(_canvas);
         }
 
         if (_timeTime <= 0)
         {
             SceneManager.LoadScene("Win");
+            Destroy(_ambiance);
             Destroy(_canvas);
         }
             

@@ -318,6 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dart: {fileID: 2774449449861349858, guid: e88ffbdefe0290b4d99cf1ca4aee0f68, type: 3}
   pointer: {fileID: 404333296}
+  timeGainedFromDartHit: 0.5
 --- !u!61 &1789035259
 BoxCollider2D:
   m_ObjectHideFlags: 0
