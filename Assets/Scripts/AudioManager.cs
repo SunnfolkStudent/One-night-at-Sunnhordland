@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource _Source;
 
-    public AudioClip scream;
+    public AudioClip Scream;
     
     // Start is called before the first frame update
     public void Start()
@@ -18,7 +18,5 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        _Source.PlayOneShot(scream);
     }
 }
