@@ -23,7 +23,7 @@ namespace Basketball
         {
             _sleepMeter = GameObject.Find("SleepBar").gameObject.GetComponent<SleepMeter>();
             _pointer = FindAnyObjectByType<FollowPointer>().gameObject;
-            _lineRenderer = FindAnyObjectByType<LineRenderer>();
+            _lineRenderer = GameObject.Find("Line").GetComponent<LineRenderer>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _startPosition = transform.position;
             _rigidbody2D.gravityScale = 0;
@@ -104,7 +104,7 @@ namespace Basketball
             if (other.gameObject.CompareTag("Basket"))
             {
                 Debug.Log("hit!");
-                GainTime(timeGainedFromPints);
+                _sleepMeter.IncreaseTimer(timeGainedFromPints);
                 SceneManager.LoadScene("MainOffice");
             }
             else if (other.gameObject.CompareTag("Ground"))
@@ -113,12 +113,6 @@ namespace Basketball
             }
             Instantiate(gameObject, _startPosition, new Quaternion(0,0,0,0));
             Destroy(gameObject);
-        }
-
-        private void GainTime(float time)
-        {
-            time *= _sleepMeter.energySeconds;
-            _sleepMeter.IncreaseTimer(time);
         }
     }
 }

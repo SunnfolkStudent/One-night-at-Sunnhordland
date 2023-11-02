@@ -55,19 +55,15 @@ public class SleepMeter : MonoBehaviour
         }
         else
         {
-
-            SceneManager.LoadScene("Loose");
-            _Source.PlayOneShot(Scream);
-
             SceneManager.LoadScene("Lose");
+            _Source.PlayOneShot(Scream);
             Destroy(_canvas);
         }
 
-        if (_timeTime == 0)
+        if (_timeTime <= 0)
         {
             SceneManager.LoadScene("Win");
             Destroy(_canvas);
-
         }
             
         SetSleepBarLength();
