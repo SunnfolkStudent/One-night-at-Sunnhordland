@@ -50,7 +50,7 @@ public class SleepMeter : MonoBehaviour
         {
             sleepLevel -= energySeconds * Time.deltaTime;
             _timeTime -= _timeSeconds * Time.deltaTime;
-            Debug.Log("timeTime: " + _timeTime);
+            //Debug.Log("timeTime: " + _timeTime);
         }
         else
         {

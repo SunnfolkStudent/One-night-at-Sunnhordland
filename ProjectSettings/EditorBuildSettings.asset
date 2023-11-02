@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: 258fd086c9cd6ef44a307388051caa63
+  - enabled: 1
+    path: Assets/Scenes/MenuCredits.unity
+    guid: c2d3d01cf436f8d4b99df5267f2cf8a8
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
