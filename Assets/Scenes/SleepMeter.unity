@@ -243,7 +243,11 @@ PrefabInstance:
       objectReference: {fileID: 1535209564}
     - target: {fileID: 759024644702461648, guid: 3d80d4aaef24fee428f6b6e288c3a988, type: 3}
       propertyPath: energySeconds
-      value: 30
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 759024644702461648, guid: 3d80d4aaef24fee428f6b6e288c3a988, type: 3}
+      propertyPath: missingPercentTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4560514855068468909, guid: 3d80d4aaef24fee428f6b6e288c3a988, type: 3}
       propertyPath: m_Name

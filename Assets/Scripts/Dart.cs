@@ -5,6 +5,7 @@ public class Dart : MonoBehaviour
 {
     [SerializeField] private GameObject dart;
     [SerializeField] private GameObject pointer;
+    [SerializeField] private float timeGainedFromDartHit;
     
     private SleepMeter _sleepMeter;
 
@@ -19,7 +20,7 @@ public class Dart : MonoBehaviour
     private void OnMouseDown()
     {
         Instantiate(dart, pointer.transform.position, Quaternion.identity);
-        _sleepMeter.IncreaseTimer(1);
+        _sleepMeter.IncreaseTimer(timeGainedFromDartHit);
     }
 
     private void ReturnToMainOffice()
