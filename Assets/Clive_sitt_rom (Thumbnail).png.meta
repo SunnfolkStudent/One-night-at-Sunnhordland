@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Clive_sitt_rom (Thumbnail)_0: -5184365111338759888
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
