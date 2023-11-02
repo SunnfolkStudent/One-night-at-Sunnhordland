@@ -14,7 +14,7 @@ public class Dart : MonoBehaviour
         _sleepMeter = GameObject.Find("SleepBar").gameObject.GetComponent<SleepMeter>();
         pointer = GameObject.Find("Pointer").gameObject;
         
-        Invoke(nameof(ReturnToMainOffice), 3);
+        Invoke(nameof(ReturnToMainOffice), 2);
     }
 
     private void OnMouseDown()
