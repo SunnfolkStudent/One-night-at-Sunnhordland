@@ -14,26 +14,29 @@ public class LineGenerator : MonoBehaviour
     private void Update()
     {
         Debug.Log(_isMouseOverDrawable);
-        //if (_isMouseOverDrawable)
-        //{
-            
-        if (Input.GetMouseButtonDown(0))
+        if (_isMouseOverDrawable)
         {
-            GameObject newLine = Instantiate(linePrefab);
-            _activeLine = newLine.GetComponent<Line>();
+            if (Input.GetMouseButtonDown(0))
+            {
+                GameObject newLine = Instantiate(linePrefab);
+                _activeLine = newLine.GetComponent<Line>();
+            }
+            
+            if (_activeLine != null)
+            {
+                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                _activeLine.UpdateLine(mousePos);
+            }
         }
-
+        else
+        {
+            _activeLine = null;
+        }
+        
         if (Input.GetMouseButtonUp(0))
         {
             _activeLine = null;
         }
-
-        if (_activeLine != null)
-        {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            _activeLine.UpdateLine(mousePos);
-        }
-        //}
     }
 
     private void OnMouseExit()
