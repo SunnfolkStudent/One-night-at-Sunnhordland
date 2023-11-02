@@ -10,15 +10,26 @@ namespace ClickableObjects
 
         private void Start()
         {
+            _coffeeAvailable = true;
             _sleepMeter = GameObject.Find("SleepBar").gameObject.GetComponent<SleepMeter>();
         }
 
         private void OnMouseDown()
         {
-            if (_coffeeAvailable == false) return;
+            if (_coffeeAvailable == false)
+            {
+                Debug.Log("coffee not available");
+                return;
+            }
             
             _sleepMeter.IncreaseTimer(5);
             _coffeeAvailable = false;
+            Invoke(nameof(SetCoffeeAvailible), coffeeTimeRegeneration);
+        }
+
+        private void SetCoffeeAvailible()
+        {
+            _coffeeAvailable = true;
         }
     }
 }
