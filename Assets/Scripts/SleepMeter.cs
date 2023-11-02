@@ -8,6 +8,8 @@ public class SleepMeter : MonoBehaviour
     private int _state;
     private RectTransform _rectTransform;
     private Vector3 _standardPositionBar;
+    public AudioSource _Source;
+    public AudioClip Scream;
         
     [Header("SleepMeterSegments")]
     [SerializeField] private GameObject hours;
@@ -42,6 +44,7 @@ public class SleepMeter : MonoBehaviour
         else
         {
             SceneManager.LoadScene("Loose");
+            _Source.PlayOneShot(Scream);
         }
             
         SetSleepBarLength();
