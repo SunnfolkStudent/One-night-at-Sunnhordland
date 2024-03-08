@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     
     private Queue<string> _sentences;
 
-    public GameObject dialoguwBox;
+    public GameObject dialogueBox;
     
     void Start()
     {
@@ -37,7 +37,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (_sentences.Count == 0)
         {
-            dialoguwBox.SetActive(false);
+            dialogueBox.SetActive(false);
             if(SceneManager.GetActiveScene().name != "MainOffice") EndDialogue();
             return;
         }

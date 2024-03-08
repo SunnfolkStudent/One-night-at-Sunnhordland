@@ -10,6 +10,7 @@ public class GoToMainMenu : MonoBehaviour
 
     private void GoToMainMenuScene()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene("MenuMain");
     }
 }
